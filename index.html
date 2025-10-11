@@ -53,7 +53,6 @@
       transform: scale(1.1);
     }
 
-    /* Posições iniciais para ajuste via Inspecionar */
     .whatsapp {
       top: 57.9%;
       left: 13%;
@@ -142,18 +141,26 @@
 
     <!-- Contador -->
     <iframe src="https://www.tickcounter.com/countdown/8360194/faltam"></iframe>
+
+    <!-- Música de fundo -->
+    <audio id="musica-fundo" loop>
+      <source src="audio/hot-body.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio.
+    </audio>
   </div>
 
-  <!-- Script para alternar capa/convite -->
+  <!-- Script para alternar capa/convite e iniciar música -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const capa = document.querySelector('.capa');
       const convite = document.getElementById('convite');
+      const audio = document.getElementById('musica-fundo');
 
-      if (capa && convite) {
+      if (capa && convite && audio) {
         capa.addEventListener('click', function () {
           capa.classList.add('hidden');
           convite.classList.remove('hidden');
+          audio.play(); // inicia a música ao abrir o convite
         });
       }
     });
