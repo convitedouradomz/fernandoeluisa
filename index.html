@@ -108,18 +108,18 @@
       }
 
       .whatsapp {
-        top: 60%;
-        left: 10%;
+        top: 62vw;
+        left: 10vw;
       }
 
       .local {
-        top: 60%;
-        left: 43%;
+        top: 62vw;
+        left: 43vw;
       }
 
       .presentes {
-        top: 60%;
-        left: 75%;
+        top: 62vw;
+        left: 75vw;
       }
 
       .retangulo-branco {
@@ -131,38 +131,38 @@
 <body>
 
   <!-- Música de fundo -->
-  <audio id="musica-fundo" loop>
+  <audio id="musica-fundo" loop muted>
     <source src="audio/hot-body.mp3" type="audio/mpeg">
     Seu navegador não suporta áudio.
   </audio>
 
   <!-- Capa inicial -->
   <div class="capa">
-    <img src="capa.png" alt="Clique para abrir o convite" />
+    <img src="imagens/capa.png" alt="Clique para abrir o convite" />
   </div>
 
   <!-- Conteúdo do convite -->
   <div id="convite" class="hidden">
-    <img src="pagina1.png" alt="Página 1" />
-    <img src="pagina2.png" alt="Página 2" />
+    <img src="imagens/pagina1.png" alt="Página 1" />
+    <img src="imagens/pagina2.png" alt="Página 2" />
 
     <!-- Página com imagem de fundo + ícones sobrepostos -->
     <div class="pagina-com-icones">
-      <img src="icons.png" alt="Página com ícones" class="fundo" />
+      <img src="imagens/icons.png" alt="Página com ícones" class="fundo" />
       <a href="https://wa.me/258822273224" target="_blank" class="icone-link whatsapp">
-        <img src="W.png" alt="WhatsApp" />
+        <img src="imagens/W.png" alt="WhatsApp" />
       </a>
       <a href="https://maps.app.goo.gl/Ea2B5dgQyePN61oBA" target="_blank" class="icone-link local">
-        <img src="L.png" alt="Localização" />
+        <img src="imagens/L.png" alt="Localização" />
       </a>
       <a href="presentes.html" class="icone-link presentes">
-        <img src="P.png" alt="Presentes" />
+        <img src="imagens/P.png" alt="Presentes" />
       </a>
     </div>
 
     <!-- Save the Date com retângulo branco sobreposto -->
     <div class="save-the-date-container">
-      <img src="save-the-date.png" alt="Save the Date" />
+      <img src="imagens/save-the-date.png" alt="Save the Date" />
       <div class="retangulo-branco"></div>
     </div>
 
@@ -181,6 +181,8 @@
         capa.addEventListener('click', function () {
           capa.classList.add('hidden');
           convite.classList.remove('hidden');
+          audio.load();
+          audio.muted = false;
           audio.play().catch(() => {
             console.log("Autoplay bloqueado, tente tocar manualmente.");
           });
