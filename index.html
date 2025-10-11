@@ -53,6 +53,7 @@
       transform: scale(1.1);
     }
 
+    /* Posições para desktop */
     .whatsapp {
       top: 57.9%;
       left: 13%;
@@ -100,14 +101,40 @@
       height: 150px;
     }
 
+    /* Ajustes para celular */
     @media (max-width: 600px) {
       .icone-link {
-        width: 50px;
+        width: 60px;
+      }
+
+      .whatsapp {
+        top: 60%;
+        left: 10%;
+      }
+
+      .local {
+        top: 60%;
+        left: 43%;
+      }
+
+      .presentes {
+        top: 60%;
+        left: 75%;
+      }
+
+      .retangulo-branco {
+        top: 108%;
       }
     }
   </style>
 </head>
 <body>
+
+  <!-- Música de fundo -->
+  <audio id="musica-fundo" loop>
+    <source src="audio/hot-body.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
 
   <!-- Capa inicial -->
   <div class="capa">
@@ -141,12 +168,6 @@
 
     <!-- Contador -->
     <iframe src="https://www.tickcounter.com/countdown/8360194/faltam"></iframe>
-
-    <!-- Música de fundo -->
-    <audio id="musica-fundo" loop>
-      <source src="audio/hot-body.mp3" type="audio/mpeg">
-      Seu navegador não suporta áudio.
-    </audio>
   </div>
 
   <!-- Script para alternar capa/convite e iniciar música -->
@@ -160,7 +181,9 @@
         capa.addEventListener('click', function () {
           capa.classList.add('hidden');
           convite.classList.remove('hidden');
-          audio.play(); // inicia a música ao abrir o convite
+          audio.play().catch(() => {
+            console.log("Autoplay bloqueado, tente tocar manualmente.");
+          });
         });
       }
     });
