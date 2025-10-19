@@ -69,13 +69,13 @@
       left: 73%;
     }
 
-    .save-the-date-container {
+    .save-container {
       position: relative;
       max-width: 800px;
       margin: 0 auto;
     }
 
-    .save-the-date-container img {
+    .save-container img {
       width: 100%;
       height: auto;
       display: block;
@@ -88,16 +88,30 @@
       width: 100%;
       height: 40px;
       background-color: white;
-      z-index: 2;
+      z-index: 10;
     }
 
-    iframe {
-      border: none;
-      margin: 20px auto;
-      display: block;
+    .contador-container {
+      position: relative;
       max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contador-container iframe {
+      border: none;
       width: 100%;
       height: 150px;
+      display: block;
+    }
+
+    .contador-container .retangulo-branco {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background-color: white;
+      z-index: 10;
     }
 
     /* Ajustes para celular */
@@ -122,6 +136,10 @@
       }
 
       .retangulo-branco {
+        height: 30px;
+      }
+
+      .contador-container .retangulo-branco {
         height: 30px;
       }
     }
@@ -159,14 +177,17 @@
       </a>
     </div>
 
-    <!-- Save the Date com retângulo branco no fundo -->
-    <div class="save-the-date-container">
+    <!-- Save com retângulo branco no fundo -->
+    <div class="save-container">
       <img src="save.png" alt="Save the Date" />
       <div class="retangulo-branco"></div>
     </div>
 
-    <!-- Contador -->
-    <iframe src="https://www.tickcounter.com/countdown/8360194/faltam"></iframe>
+    <!-- Contador com retângulo branco para esconder rodapé -->
+    <div class="contador-container">
+      <iframe src="https://www.tickcounter.com/countdown/8360194/faltam"></iframe>
+      <div class="retangulo-branco"></div>
+    </div>
   </div>
 
   <!-- Script para iniciar música e revelar convite -->
@@ -195,4 +216,3 @@
   </script>
 </body>
 </html>
-
