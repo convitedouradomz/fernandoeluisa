@@ -29,6 +29,7 @@
       position: relative;
       max-width: 800px;
       margin: 0 auto;
+      overflow: visible;
     }
 
     .pagina-com-icones img.fundo {
@@ -84,13 +85,11 @@
     }
 
     .retangulo-branco {
-      position: absolute;
-      left: 0;
+      position: relative;
       width: 100%;
-      height: 5%;
+      height: 40px;
       background-color: white;
-      top: 110%;
-      transform: translateY(-50%);
+      margin-top: -20px;
       z-index: 2;
     }
 
@@ -125,7 +124,8 @@
       }
 
       .retangulo-branco {
-        top: 105%;
+        height: 30px;
+        margin-top: -15px;
       }
     }
   </style>
@@ -134,7 +134,7 @@
 
   <!-- Música de fundo -->
   <audio id="musica-fundo" autoplay loop muted>
-    <source src="hot-body.mp3" type="audio/mpeg">
+    <source src="edsheeran.mp3" type="audio/mpeg">
     Seu navegador não suporta áudio.
   </audio>
 
