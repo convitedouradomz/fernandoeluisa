@@ -1,25 +1,180 @@
-@media (max-width: 600px) {
-  .icone-link {
-    width: 60px;
-  }
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Convite Luísa & Fernando</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      font-family: sans-serif;
+    }
 
-  .whatsapp {
-    top: 52%;
-    left: 10%;
-  }
+    .hidden {
+      display: none;
+    }
 
-  .local {
-    top: 52%;
-    left: 43%;
-  }
+    .capa img,
+    #convite img {
+      display: block;
+      margin: 0 auto;
+      max-width: 800px;
+      width: 100%;
+      height: auto;
+    }
 
-  .presentes {
-    top: 52%;
-    left: 75%;
-  }
+    .pagina-com-icones {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-  .retangulo-branco {
-    height: 30px;
-    margin-top: -15px;
-  }
-}
+    .pagina-com-icones img.fundo {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .icone-link {
+      position: absolute;
+      width: 112px;
+      height: auto;
+    }
+
+    .icone-link img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.2s ease;
+    }
+
+    .icone-link:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Posições para desktop */
+    .whatsapp {
+      top: 58%;
+      left: 13%;
+    }
+
+    .local {
+      top: 58%;
+      left: 43%;
+    }
+
+    .presentes {
+      top: 58%;
+      left: 73%;
+    }
+
+    .save-the-date-container {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .save-the-date-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .retangulo-branco {
+      position: relative;
+      width: 100%;
+      height: 40px;
+      background-color: white;
+      margin-top: -20px;
+      z-index: 2;
+    }
+
+    iframe {
+      border: none;
+      margin: 20px auto;
+      display: block;
+      max-width: 800px;
+      width: 100%;
+      height: 150px;
+    }
+
+    /* Ajustes para celular */
+    @media (max-width: 600px) {
+      .icone-link {
+        width: 60px;
+      }
+
+      .whatsapp {
+        top: 48%;
+        left: 10%;
+      }
+
+      .local {
+        top: 48%;
+        left: 43%;
+      }
+
+      .presentes {
+        top: 48%;
+        left: 75%;
+      }
+
+      .retangulo-branco {
+        height: 30px;
+        margin-top: -15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Música de fundo -->
+  <audio id="musica-fundo" autoplay loop muted>
+    <source src="edsheeran.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <!-- Capa inicial -->
+  <div class="capa">
+    <img src="capa.png" alt="Clique para abrir o convite" />
+  </div>
+
+  <!-- Conteúdo do convite -->
+  <div id="convite" class="hidden">
+    <img src="pagina1.png" alt="Página 1" />
+    <img src="pagina2.png" alt="Página 2" />
+
+    <!-- Página com imagem de fundo + ícones sobrepostos -->
+    <div class="pagina-com-icones">
+      <img src="icones.png" alt="Página com ícones" class="fundo" />
+      <a href="https://wa.me/258822273224" target="_blank" class="icone-link whatsapp">
+        <img src="W.png" alt="WhatsApp" />
+      </a>
+      <a href="https://maps.app.goo.gl/Ea2B5dgQyePN61oBA" target="_blank" class="icone-link local">
+        <img src="L.png" alt="Localização" />
+      </a>
+      <a href="presentes.html" class="icone-link presentes">
+        <img src="P.png" alt="Presentes" />
+      </a>
+    </div>
+
+    <!-- Save the Date com retângulo branco sobreposto -->
+    <div class="save-the-date-container">
+      <img src="save-the-date.png" alt="Save the Date" />
+      <div class="retangulo-branco"></div>
+    </div>
+
+    <!-- Contador -->
+    <iframe src="https://www.tickcounter.com/countdown/8360194/faltam"></iframe>
+  </div>
+
+  <!-- Script para iniciar música e revelar convite -->
+  <script>
+    window.addEventListener('load', function () {
+      const audio = document.getElementById('musica-fundo');
+      if (audio) {
+        audio.muted = false;
+        audio.play().catch(() => {
+          console.log("Autoplay bloqueado, tente tocar manualmente.");
+        });
