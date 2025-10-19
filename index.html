@@ -178,3 +178,20 @@
         audio.play().catch(() => {
           console.log("Autoplay bloqueado, tente tocar manualmente.");
         });
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const capa = document.querySelector('.capa');
+      const convite = document.getElementById('convite');
+
+      if (capa && convite) {
+        capa.addEventListener('click', function () {
+          capa.classList.add('hidden');
+          convite.classList.remove('hidden');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
